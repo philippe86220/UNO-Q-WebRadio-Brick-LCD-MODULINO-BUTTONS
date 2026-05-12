@@ -23,7 +23,7 @@ int radioIndex;
 uint8_t volume = 50;
 bool radioRunning = true;
 
-void audio(int x) {
+void audio() {
   audioReady = true;
 }
 
