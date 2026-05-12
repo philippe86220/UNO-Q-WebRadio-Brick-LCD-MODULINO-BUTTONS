@@ -8,7 +8,7 @@ for attempt in range(30):
     status = player.status()
 
     if status.get("ok"):
-        Bridge.call("audio",1)
+        Bridge.call("audio")
         print("Audio backend ready")
         break
 
