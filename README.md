@@ -44,7 +44,7 @@ Ce code reste volontairement très simple afin de pouvoir être facilement adapt
 
 ## Capture d'écran
 
-![Aperçu](/docs/screenshot.jpg)
+![Aperçu](/docs/scrennshot.jpg)
 
 ---
 
