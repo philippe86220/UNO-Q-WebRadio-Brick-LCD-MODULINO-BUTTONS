@@ -25,7 +25,7 @@ C'est un code trés basic que chacun pourra adapter à son bon vouloir.
 
 ## capture d'écran :
 
-![aperçu](/docs/scrennshot.png)
+![aperçu](/docs/scrennshot.jpg)
 
 ---
 
