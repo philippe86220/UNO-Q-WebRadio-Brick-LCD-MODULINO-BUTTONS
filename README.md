@@ -15,7 +15,7 @@ Version avec Modulino Buttons et écran LCD 20x4 de l'utilisation d'une WebRadio
 - Sur le LCD 20x4 (3,3 V), à côté de `Radio :`, apparaît `OK`.
 - L'application est alors opérationnelle.
 
-Le MCU attend ensuite les actions utilisateur via les boutons Modulino :
+Le MPU attend ensuite les actions utilisateur via les boutons Modulino :
 
 - **A** : change de station
 - **B** : augmente le volume par incréments de 10 % (au-delà de 100 %, retour à 0 %)
