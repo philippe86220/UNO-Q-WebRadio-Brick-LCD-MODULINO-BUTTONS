@@ -7,28 +7,47 @@
 
 # UNO-Q-WebRadio-Brick-LCD-MODULINO-BUTTONS
 
-Version avec Modulino Buttons et LCD 20x04 de l'utilisation d'une WebRadio avec la brick personnalisée `AudioPlayer`.
+Version avec Modulino Buttons et écran LCD 20x4 de l'utilisation d'une WebRadio avec la brick personnalisée `AudioPlayer`.
 
-## Principe de fonctionnement :
+## Principe de fonctionnement
 
-- Côté MPU dès que Le système audio est prêt, Bridge transmet l'information au MCU :
-  - Sur le LCD 20x04 (3,3V) à côté de `Radio :` apparait `OK`  
-  👉 l'application est opérationnelle 
-  - MPU est en attente via Bridge d'un appui côté MCU sur les BP `A`, `B` ou `C` :
-    - appui sur `A` : change de station
-    - appui sur `B` : augmente le volume (il augmente par incrément de 10 et si > 100 repasse à 0) 
-    - appui sur `C` : arrête le player audio, si on appui sur A il redemarre 
+- Côté MPU, dès que le système audio est prêt, Bridge transmet l'information au MCU.
+- Sur le LCD 20x4 (3,3 V), à côté de `Radio :`, apparaît `OK`.
+- L'application est alors opérationnelle.
 
-C'est un code trés basic que chacun pourra adapter à son bon vouloir.
+Le MCU attend ensuite les actions utilisateur via les boutons Modulino :
+
+- **A** : change de station
+- **B** : augmente le volume par incréments de 10 % (au-delà de 100 %, retour à 0 %)
+- **C** : arrête la lecture audio
+
+Après un arrêt, un nouvel appui sur **A** redémarre la lecture avec la dernière station sélectionnée.
+
+## Architecture
+
+- **MPU (Python / App Lab)** :
+  - gestion du backend audio
+  - lecture des flux WebRadio
+  - gestion du volume
+  - réception des commandes via Bridge
+
+- **MCU (C++ / Arduino)** :
+  - gestion des boutons Modulino
+  - affichage sur LCD
+  - interface utilisateur locale
+
+Communication bidirectionnelle via **Bridge (MPU <-> MCU)**.
+
+Ce code reste volontairement très simple afin de pouvoir être facilement adapté.
 
 ---
 
-## capture d'écran :
+## Capture d'écran
 
-![aperçu](/docs/scrennshot.jpg)
+![Aperçu](/docs/screenshot.jpg)
 
 ---
 
-## remerciements :
+## Remerciements
 
-Ce projet a été réalisé avec la collaboration de ChatGPT (openAI)
+Ce projet a été réalisé avec la collaboration de ChatGPT (OpenAI).
